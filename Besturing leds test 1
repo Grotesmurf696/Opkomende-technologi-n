@@ -1,0 +1,27 @@
+#include <Adafruit_NeoPixel.h>
+
+#define LED_PIN 6    // Pin waar de WS2813 Data In op is aangesloten
+#define LED_COUNT 20  // Aantal LEDs in de strip
+int aantal_leds = 20;
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+
+
+
+
+void setup() {
+  strip.begin();
+  strip.show();  // Alle LEDs uitzetten
+  strip.setBrightness(50);  // Pas de helderheid aan (0-255)
+  Serial.begin(115200);
+  Serial.print(rood);
+}
+
+void loop() {
+  for(int i= 0; i < strip.numPixels(); i ++) {
+    strip.setPixelColor(i, strip.Color(255, 0, 0));
+    strip.show();
+    delay(500);
+    strip.setPixelColor(i, strip.Color(0,0,0));
+  }
+}
