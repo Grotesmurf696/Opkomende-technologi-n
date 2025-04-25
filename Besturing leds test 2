@@ -64,36 +64,20 @@ void loop() {
     int Hoekdeel = hoekGetal / 18;
     
     strip.setPixelColor(Hoekdeel, strip.Color(255,0,0));
-    strip.setPixelColor(Hoekdeel + 19, strip.Color(0,255,0));
+    strip.setPixelColor(Hoekdeel - 1, strip.Color(0,255,0));
     strip.setPixelColor(Hoekdeel + 1, strip.Color(0,255,0));
     strip.show();
     delay(100);
+
     strip.setPixelColor(Hoekdeel, strip.Color(0,0,0));
-    strip.setPixelColor(Hoekdeel+19, strip.Color(0,0,0));
+    strip.setPixelColor(Hoekdeel - 1, strip.Color(0,0,0));
     strip.setPixelColor(Hoekdeel + 1, strip.Color(0,0,0));
     strip.show();
     delay(100);
 
     line = "";
     VolledigeString = false;
-  }
-  if (VolledigeString; line == '1000') {
-    Serial.println(line);  // Debug output
-    int hoekGetal = line.toInt();
-    int Hoekdeel = hoekGetal / 18;
-    
-    strip.setPixelColor(Hoekdeel, strip.Color(255,0,0));
-    strip.setPixelColor(Hoekdeel + 19, strip.Color(0,255,0));
-    strip.setPixelColor(Hoekdeel + 1, strip.Color(0,255,0));
-    strip.show();
-    delay(100);
-    strip.setPixelColor(Hoekdeel, strip.Color(0,0,0));
-    strip.setPixelColor(Hoekdeel+19, strip.Color(0,0,0));
-    strip.setPixelColor(Hoekdeel + 1, strip.Color(0,0,0));
-    strip.show();
-    delay(100);
 
-    line = "";
-    VolledigeString = false;
   }
+  
 } 
