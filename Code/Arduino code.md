@@ -8,5 +8,6 @@ Sam heeft alle code geschreven voor het besturen van de Adafruit led strip/ circ
 Aangezien dit voor Sam de eerste keer is dat hij github gebruikt om zelf een repo. op aan te maken zijn er in de plaats van aanpassingen in de code, gewoon extra files aangemaakt. Dit is voor hem ook een leerproces dus hebben we ervoor gekozen deze aanpassingen gewoon zo te laten.
 
 ### Code geschreven door Sam
-[Besturing leds test 1]().
+1.[Besturing leds test 1](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Besturing%20leds%20test%201).
+2.[Besturing leds test 2](
 ## Victor
