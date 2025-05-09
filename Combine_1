@@ -1,0 +1,121 @@
+// eerst beginnen we met de code voor de strings uit te lezen
+String line = "0";
+bool VolledigeString = false;
+int angle;
+
+// Hierna komt alle code voor de ADAfruit ledstrip
+
+#include <Adafruit_NeoPixel.h>
+#include <Wire.h>
+#include <MPU6050.h>
+MPU6050 mpu;
+
+
+#define LED_PIN 6
+#define LED_COUNT 20
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+int aantalLeds = 20;
+
+void setup() {
+  Serial.begin(115200); // Start de seriële monitor en comunicatie
+
+  strip.begin();
+  strip.show();
+  strip.setBrightness(30);  // Pas de helderheid aan (0-255)
+
+  Wire.begin(); // Voor uitlezen van de gyro
+  mpu.initialize(); // Start van Gyro
+  pinMode(2, OUTPUT);
+
+   if (!mpu.testConnection()) {
+    Serial.println("MPU6050 verbinding mislukt!"); // melden als de verbinding met de gyro is mislukt
+    while (1);
+   }
+  //alle leds even testen
+  for(int i= 0; i < strip.numPixels(); i ++) {
+    strip.setPixelColor(i, strip.Color(255, 0, 0));
+    strip.show();
+    delay(50);
+    strip.setPixelColor(i, strip.Color(0,0,0));
+    strip.show();
+
+  }
+  for (int i = 0; i < strip.numPixels(); i ++){
+    strip.setPixelColor(i, strip.Color(0, 255, 0));
+    strip.show();
+    delay(50);
+    strip.setPixelColor(i, strip.Color(0,0,0));
+    strip.show();
+  
+  }
+  for (int i = 0; i < strip.numPixels(); i ++){
+    strip.setPixelColor(i, strip.Color(0, 0, 255));
+    strip.show();
+    delay(50);
+    strip.setPixelColor(i, strip.Color(0,0,0));
+    strip.show();
+    
+    
+  }
+}
+
+void loop() {
+  int16_t ax, ay, az;
+  mpu.getAcceleration(&ax, &ay, &az);
+
+  // Versnelling omzetten naar 'g'-waarden om een kanteling in de drie richtingen te kunnen bepalen.
+  float fax = ax / 16384.0;
+  float fay = ay / 16384.0;
+  float faz = az / 16384.0;
+
+  // Check of het handvat ongeveer vlak gehouden wordt
+  if (abs(fax) < 0.1 && abs(fay) < 0.1 && faz > 0.9) { //absolute waarde van de  drie richtingen vergelijken met een bepaalde hoek gebruikt als marge voor "vlak"
+    Serial.println("vlak");
+    digitalWrite(2, HIGH);
+  } 
+  else {
+    // Bereken kantelhoek in graden
+    angle = atan2(ay, ax) * 180 / PI;
+    digitalWrite(2, LOW);
+
+    // Zorg dat de hoek tussen 0 en 360 ligt
+    if (angle < 0) {
+      angle += 360;
+    }
+
+    Serial.println(angle);
+  }
+
+  delay(100); // kleine vertraging
+
+  while (Serial.available()) {
+    char inkomend = Serial.read();
+    if (inkomend == '\n') {
+      VolledigeString = true;
+    } 
+    else {
+      line += inkomend;
+    }
+  }
+
+  if (angle) {
+    Serial.println(line);  // Debug output
+    int hoekGetal = angle;
+    int Hoekdeel = hoekGetal / 18;
+    
+    strip.setPixelColor(Hoekdeel, strip.Color(255,0,0));
+    strip.setPixelColor(Hoekdeel - 1, strip.Color(0,255,0));
+    strip.setPixelColor(Hoekdeel + 1, strip.Color(0,255,0));
+    strip.show();
+    delay(100);
+
+    strip.setPixelColor(Hoekdeel, strip.Color(0,0,0));
+    strip.setPixelColor(Hoekdeel - 1, strip.Color(0,0,0));
+    strip.setPixelColor(Hoekdeel + 1, strip.Color(0,0,0));
+    strip.show();
+    delay(100);
+
+  }
+  
+} 
