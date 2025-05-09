@@ -9,5 +9,6 @@ Aangezien dit voor Sam de eerste keer is dat hij github gebruikt om zelf een rep
 
 ### Code geschreven door Sam
 1.[Besturing leds test 1](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Besturing%20leds%20test%201).
-2.[Besturing leds test 2](
+2.[Besturing leds test 2](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Besturing%20leds%20test%202).
 ## Victor
+1.[Gyroscope2.0](./Gyroscope.ino)
