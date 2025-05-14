@@ -6,17 +6,19 @@ MPU6050 mpu;
 unsigned long vorigeTijd = 0;
 float zHoek = 0;
 int vorige_fgz = 0;
-int horizontaal = 0;
-int vertikaal = 0;
-float r = 0;
+
 float angleXFiltered = 0;
 float alpha = 0.1;
+
+const int knopPin = 6;
+const int motorPin = 2;
 
 void setup() {
   Serial.begin(9600);
   Wire.begin();
   mpu.initialize();
-  pinMode(A2, OUTPUT);
+  pinMode(motorPin, OUTPUT);
+  pinMode(knopPin, INPUT_PULLUP);
   if (!mpu.testConnection()) {
     Serial.println("MPU6050 verbinding mislukt!");
     while (1);
@@ -49,7 +51,7 @@ void loop() {
 
   int Xangle = round(atan2(faz, fax) * 180 / PI);
 
-  digitalWrite(2, LOW);
+  int knopstatus = digitalRead(knopPin);
   if (zHoek > 180){
       zHoek -=360;
   }
@@ -64,7 +66,10 @@ void loop() {
   Serial.println(round(angleXFiltered));
   Serial.print("X||");
   Serial.println(round(zHoek));
-  horizontaal = ((1673 / 120)*zHoek)/150;
-  vertikaal = (833/120)*Xangle/150;
-  r = sqrt((pow(horizontaal,2)+pow(vertikaal,2)));
+  if(zHoek<=60 && zHoek>=55 && angleXFiltered >-55 && angleXFiltered<-44 && knopstatus == LOW){
+    digitalWrite(motorPin, HIGH);
+  }
+  else{
+    digitalWrite(motorPin, LOW);
+  }
 }
