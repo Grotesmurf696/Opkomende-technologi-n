@@ -8,6 +8,9 @@ float zHoek = 0;
 int vorige_fgz = 0;
 int horizontaal = 0;
 int vertikaal = 0;
+float r = 0;
+float angleXFiltered = 0;
+float alpha = 0.1;
 
 void setup() {
   Serial.begin(9600);
@@ -44,29 +47,24 @@ void loop() {
   if (zHoek < 0) zHoek += 360;
   if (zHoek >= 360) zHoek -= 360;
 
-  // Check of het handvat ongeveer vlak gehouden wordt
-  if (abs(fax) < 0.1 && abs(fay) < 0.1 && faz > 0.9) { //absolute waarde van de  drie richtingen vergelijken met een bepaalde hoek gebruikt als marge voor "vlak"
-    //Serial.println("vlak");
-    digitalWrite(2, HIGH);
-  } else {
-    // Bereken kantelhoek in graden
-    int Xangle = atan2(faz, fax) * 180 / PI;
-    digitalWrite(2, LOW);
-    if (zHoek > 180){
+  int Xangle = round(atan2(faz, fax) * 180 / PI);
+
+  digitalWrite(2, LOW);
+  if (zHoek > 180){
       zHoek -=360;
-    }
-    Xangle -=90;
-    if (Xangle > 180){
-      Xangle -= 360;
-    }
-    Xangle= Xangle*-1;
-    //Serial.print("Y||");
-    //Serial.println(round(Xangle));
-    //Serial.print("X||");
-    //Serial.println(round(zHoek));
-    horizontaal = ((1673 / 120)*zHoek)/50;
-    vertikaal = (833/120)*Xangle/50;
-    float r = sqrt((pow(horizontaal,2)+pow(vertikaal,2)));
-    Serial.println(r);
   }
+  Xangle -=90;
+  if (Xangle > 180){
+    Xangle -= 360;
+  }
+  Xangle= Xangle*-1;
+
+  angleXFiltered = alpha * Xangle + (1 - alpha) * angleXFiltered;
+  Serial.print("Y||");
+  Serial.println(round(angleXFiltered));
+  Serial.print("X||");
+  Serial.println(round(zHoek));
+  horizontaal = ((1673 / 120)*zHoek)/150;
+  vertikaal = (833/120)*Xangle/150;
+  r = sqrt((pow(horizontaal,2)+pow(vertikaal,2)));
 }
