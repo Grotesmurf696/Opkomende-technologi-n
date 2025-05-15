@@ -23,7 +23,7 @@ Maar deze twee delen konden niet zomaar communiceren met elkaar, dus hadden we e
 ### Gyroscoop
 #### Basis/validatie
 
-Om het concept en werking van de gyroscoop en het coderen ervan onder de knie te krijgen is er eerst een zeer eenvoudige code opgesteld. Hiermee werd ook de werking van de input (gyroscoop) gevalideerd. Met deze code kon bepaald worden of de gyroscoop gekanteld werd en in welke richting er gekanteld werd. Deze data werd vervolgens geprint op de seriële monitor. Hierdoor kreeg de gebruiker te zien of er naar voor, links, rechts, schuin links vooruit, schuin links achteruit, schuin rechts vooruit of schuin rechts achteruit gekanteld werd met de gyroscoop.
+Om het concept en werking van de gyroscoop en het coderen ervan onder de knie te krijgen is er eerst een zeer eenvoudige code opgesteld. Hiermee werd ook de werking van de input (gyroscoop) gevalideerd. Met deze code kon bepaald worden of de gyroscoop gekanteld werd en in welke richting er gekanteld werd. Deze data werd vervolgens geprint op de seriële monitor. Hierdoor kreeg de gebruiker te zien of er naar voor, links, rechts, schuin links vooruit, schuin links achteruit, schuin rechts vooruit of schuin rechts achteruit gekanteld werd met de gyroscoop. Klik [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/Gyroscope/Gyroscope.ino) voor de code.
 
 Schakeling:
 <p align="center">
@@ -43,9 +43,15 @@ Schakeling:
 
 Na een kort feedbackmoment met de docent werd uitgedaagd om ook een visuele representaie/spel op te stellen zodat er ook iets bestuurd kan worden met de gyroscoop. Aangezien er al een tof project was opgesteld met de balanceerder, zou het zonde zijn om de NEOpixel weg te laten. Daarom werd ook de NEOpixel inbegrepen in dit laatste spel.
 
-Ook hier werd eerst een basisprogramma opgesteld om de combinatie van Arduino en Protopie onder de knie te krijgen en de output te valideren. Hierbij werd een grijze bol bestuurd op het scherm met de beweging van de gyroscoop.
+Ook hier werd eerst een basisprogramma opgesteld om de combinatie van Arduino en Protopie onder de knie te krijgen en de output te valideren. Hierbij werd een grijze bol bestuurd op het scherm met de beweging van de gyroscoop. Deze code is [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/output_validation_where_is_waldo/output_validation_where_is_waldo.ino) te vinden.
 
-Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het scherm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler haptische feedback aan de hand van een trilmotor.
+<p align="center">
+  <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/eerste%20protopie.gif?raw=true" width="500" />
+</p>
+
+
+Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het scherm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler haptische feedback aan de hand van een trilmotor. Aangezein de werking van de trilmotor simpelweg het hoog en laag zetten van een output pin is, was deze validatie snel gemaakt. Hier is ook geen apparte code van. Hetzelfde geldt voor de knop. Deze was snel gevalideerd door het uilezen van de knop. Hier is ook geen apparte code voor gemaakt. Dit is echter wel geïntegreed in de uiteindelijke code.
+
 De code voor de gyroscoop van de balancing game staat [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/Where%20is%20waldo/Where%20is%20waldo.ino).
 
 
@@ -70,4 +76,5 @@ Schakeling:
 </p>
 <p align="center">
   <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/tot%20nu%20toe%20finaal%20GIF.gif?raw=true" width="500" />
+  <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/image1%20(23).jpeg?raw=true" width="500" />
 </p>
