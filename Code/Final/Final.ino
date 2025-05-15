@@ -1,7 +1,22 @@
-//Libraries voor werking gyroscoop
+// Victor Fransen en Sam Verkimpe
+
+//Libraries voor werking gyroscoop en neopixel
 #include <Wire.h>
 #include <MPU6050.h>
 MPU6050 mpu;
+#include <Adafruit_NeoPixel.h>
+
+//code voor string uitlezen
+String line = "0";
+bool VolledigeString = false;
+int angle;
+
+//Led strip definieren
+#define LED_PIN 6
+#define LED_COUNT 20
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+int aantalLeds = 20;
 
 //Waarden voor ruisuitwerking
 unsigned long vorigeTijd = 0;
@@ -17,12 +32,46 @@ unsigned long knoptijd;
 int level = 1;
 
 void setup() {
+  //seriele poort openen, en communcatie met gyro
   Serial.begin(9600);
   Wire.begin();
   mpu.initialize();
 
+  //Ledsrip parameters
+  strip.begin();
+  strip.show();
+  strip.setBrightness(30);
+
+  //In/output definieren
   pinMode(motorPin, OUTPUT);
   pinMode(knopPin, INPUT_PULLUP);
+
+  //alle leds even testen
+  for(int i= 0; i < strip.numPixels(); i ++) {
+    strip.setPixelColor(i, strip.Color(255, 0, 0));
+    strip.show();
+    delay(50);
+    strip.setPixelColor(i, strip.Color(0,0,0));
+    strip.show();
+
+  }
+  for (int i = 0; i < strip.numPixels(); i ++){
+    strip.setPixelColor(i, strip.Color(0, 255, 0));
+    strip.show();
+    delay(50);
+    strip.setPixelColor(i, strip.Color(0,0,0));
+    strip.show();
+  
+  }
+  for (int i = 0; i < strip.numPixels(); i ++){
+    strip.setPixelColor(i, strip.Color(0, 0, 255));
+    strip.show();
+    delay(50);
+    strip.setPixelColor(i, strip.Color(0,0,0));
+    strip.show();
+    
+    
+  }
 }
 
 void loop() {
@@ -52,6 +101,27 @@ void loop() {
 
   int xHoek = round(atan2(faz, fax) * 180 / PI); //Hoek om de X as berekenen (beweging in de y richting)
 
+  //Neopixel
+  if (xHoek) {
+    Serial.println(line);  // Debug output
+    int hoekGetal = xHoek;
+    int Hoekdeel = hoekGetal / 18;
+    
+    strip.setPixelColor(Hoekdeel, strip.Color(255,0,0));
+    strip.setPixelColor(Hoekdeel - 1, strip.Color(0,255,0));
+    strip.setPixelColor(Hoekdeel + 1, strip.Color(0,255,0));
+    strip.show();
+    delay(100);
+
+    strip.setPixelColor(Hoekdeel, strip.Color(0,0,0));
+    strip.setPixelColor(Hoekdeel - 1, strip.Color(0,0,0));
+    strip.setPixelColor(Hoekdeel + 1, strip.Color(0,0,0));
+    strip.show();
+    delay(100);
+
+  }
+
+  //where is waldo?
   int knopstatus = digitalRead(knopPin); //knop uitlezen
 
   //Voor protopie: hoeken tussen -90 en 90
