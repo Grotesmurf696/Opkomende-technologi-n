@@ -12,6 +12,9 @@ float alpha = 0.1;
 
 const int knopPin = 7;
 const int motorPin = 2;
+unsigned long knoptijd;
+
+int level = 1;
 
 void setup() {
   Serial.begin(9600);
@@ -66,10 +69,30 @@ void loop() {
   Serial.println(round(angleXFiltered));
   Serial.print("X||");
   Serial.println(round(zHoek));
-  if(zHoek<=60 && zHoek>=55 && angleXFiltered >-55 && angleXFiltered<-44 && knopstatus == LOW){
+
+  if(zHoek<=65 && zHoek>=50 && angleXFiltered >-60 && angleXFiltered<-40 && knopstatus == LOW && level == 1){
+    knoptijd = millis();
     digitalWrite(motorPin, HIGH);
+    level += 1;
+    Serial.print("level||");
+    Serial.println(level);
   }
-  else{
+  else if(zHoek<=-35 && zHoek>=-45 && angleXFiltered >20 && angleXFiltered<30 && knopstatus == LOW && level == 2){
+    knoptijd = millis();
+    digitalWrite(motorPin, HIGH);
+    level += 1;
+    Serial.print("level||");
+    Serial.println(level);
+  }
+  else if(zHoek<=45 && zHoek>=35 && angleXFiltered >35 && angleXFiltered<45 && knopstatus == LOW && level == 3){
+    knoptijd = millis();
+    digitalWrite(motorPin, HIGH);
+    level += 1;
+    Serial.print("level||");
+    Serial.println(level);
+  }
+
+  if(motorPin&& millis()-knoptijd>= 800){
     digitalWrite(motorPin, LOW);
   }
 }
