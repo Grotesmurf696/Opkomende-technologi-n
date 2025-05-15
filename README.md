@@ -32,7 +32,7 @@ Schakeling:
 
 #### Balncing game
 
-Na het onder de knie krijgen van de werking van de gyroscoop werd er een spelletje opgesteld. Hierbij was het de bedoeling dat de speler de gyroscoop perfect recht gebalanceerd krijgt. In combinatie met de NEOpixel LEDring werd gekeken naar welke kant de gyroscoop leunde. Aan deze kant lichte een LED van de NEOpixel ring op. Hierdoor kan de speler zien in welke richtng hij afwijkt. Wanneer de gyroscoop vlak wordt gehouden volgt er ook een trilling. De code voor de gyroscoop van de balancing game staat [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscope2.0.ino).
+Na het onder de knie krijgen van de werking van de gyroscoop werd er een spelletje opgesteld. Hierbij was het de bedoeling dat de speler de gyroscoop perfect recht gebalanceerd krijgt. In combinatie met de NEOpixel LEDring werd gekeken naar welke kant de gyroscoop leunde. Aan deze kant lichte een LED van de NEOpixel ring op. Hierdoor kan de speler zien in welke richtng hij afwijkt. Wanneer de gyroscoop vlak wordt gehouden volgt er ook een trilling. De code voor de gyroscoop van de balancing game staat [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/Gyroscope2.0/Gyroscope2.0.ino).
 
 Schakeling:
 <p align="center">
@@ -46,7 +46,7 @@ Na een kort feedbackmoment met de docent werd uitgedaagd om ook een visuele repr
 Ook hier werd eerst een basisprogramma opgesteld om de combinatie van Arduino en Protopie onder de knie te krijgen en de output te valideren. Hierbij werd een grijze bol bestuurd op het scherm met de beweging van de gyroscoop.
 
 Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het scherm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler haptische feedback aan de hand van een trilmotor.
-De code voor de gyroscoop van de balancing game staat [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/tree/main/Code/Gyroscope2_0_copy_20250425124007).
+De code voor de gyroscoop van de balancing game staat [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/Where%20is%20waldo/Where%20is%20waldo.ino).
 
 
 <p align="center">
@@ -62,7 +62,7 @@ Schakeling:
 
 ## Resultaat
 
-Als alle elementen samenkomen tot één geheel, wordt er een where is waldo met visuele en haptische feedback bekomen. De volledige code is [hier](url) te vinden.
+Als alle elementen samenkomen tot één geheel, wordt er een where is waldo met visuele en haptische feedback bekomen. De volledige code is [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Final/Final.ino) te vinden.
 
 Schakeling:
 <p align="center">
