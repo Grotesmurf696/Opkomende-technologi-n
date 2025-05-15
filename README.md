@@ -66,5 +66,5 @@ Als alle elementen samenkomen tot één geheel, wordt er een where is waldo met 
 
 Schakeling:
 <p align="center">
-  <img src="" width="500" />
+  <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/volledige%20schakeling.jpg?raw=true" width="500" />
 </p>
