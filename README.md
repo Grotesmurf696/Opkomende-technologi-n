@@ -45,7 +45,7 @@ Na een kort feedbackmoment met de docent werd uitgedaagd om ook een visuele repr
 
 Ook hier werd eerst een basisprogramma opgesteld om de combinatie van Arduino en Protopie onder de knie te krijgen en de output te valideren. Hierbij werd een grijze bol bestuurd op het scherm met de beweging van de gyroscoop.
 
-Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het schrm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler hapische feedback aan de hand van een trilmotor.
+Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het scherm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler haptische feedback aan de hand van een trilmotor.
 De code voor de gyroscoop van de balancing game staat [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/tree/main/Code/Gyroscope2_0_copy_20250425124007).
 
 
