@@ -68,3 +68,6 @@ Schakeling:
 <p align="center">
   <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/volledige%20schakeling.jpg?raw=true" width="500" />
 </p>
+<p align="center">
+  <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/tot%20nu%20toe%20finaal%20GIF.gif?raw=true" width="500" />
+</p>
