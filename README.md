@@ -50,7 +50,7 @@ Ook hier werd eerst een basisprogramma opgesteld om de combinatie van Arduino en
 </p>
 
 
-Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het scherm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler haptische feedback aan de hand van een trilmotor. Aangezein de werking van de trilmotor simpelweg het hoog en laag zetten van een output pin is, was deze validatie snel gemaakt. Hier is ook geen apparte code van. Hetzelfde geldt voor de knop. Deze was snel gevalideerd door het uilezen van de knop. Hier is ook geen apparte code voor gemaakt. Dit is echter wel geïntegreed in de uiteindelijke code.
+Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het scherm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler haptische feedback aan de hand van een trilmotor. Aangezein de werking van de trilmotor simpelweg het hoog en laag zetten van een output pin is, was deze validatie snel gemaakt. [Hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/validatie_motor/validatie_motor.ino) is de code voor de validatie van de werking van de trilmotor. Hetzelfde geldt voor de knop. Deze was snel gevalideerd door het uilezen van de knop. [Hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/validatie_knop/validatie_knop.ino) is de code voor de validatie van de werking van de drukknop.
 
 De code voor de gyroscoop van de balancing game staat [hier](https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Code/Gyroscoop/Where%20is%20waldo/Where%20is%20waldo.ino).
 
@@ -76,5 +76,5 @@ Schakeling:
 </p>
 <p align="center">
   <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/tot%20nu%20toe%20finaal%20GIF.gif?raw=true" width="500" />
-  <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/image1%20(23).jpeg?raw=true" width="500" />
+  <img src="https://github.com/Grotesmurf696/Opkomende-technologi-n/blob/main/Images/image1%20(23).jpeg?raw=true" width="300" />
 </p>
