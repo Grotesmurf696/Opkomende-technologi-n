@@ -10,7 +10,7 @@ int vorige_fgz = 0;
 float angleXFiltered = 0;
 float alpha = 0.1;
 
-const int knopPin = 6;
+const int knopPin = 7;
 const int motorPin = 2;
 
 void setup() {
