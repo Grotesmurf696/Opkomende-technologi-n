@@ -16,9 +16,22 @@ Dit eerste idee kon opgedeeld worden in 2 delen: het uitlezen van de gyroscoop e
 
 Maar deze twee delen konden niet zomaar communiceren met elkaar, dus hadden we een "mergepoint" opgesteld. Dit punt was een set van output- en inputwaarden. Victor zette alle ingelezen waardes van de gyroscoop om in waardes van \[0 < x < 360], oftewel 360 graden. Sam zette dan deze waardes om in een visuele representatie van de gyroscoop in de led-ring.
 
-## Feedback
+### Gyroscoop
+#### Basis/validatie
 
-Na een kort feedbackmoment met de docent werd er ons verteld dat het misschien ook een goed idee zou zijn om van onze uitgelezen waardes van de gyroscoop een visuele representatie te geven op een computerscherm. Natuurlijk wilden we onze voortgang met de leds niet verloren laten gaan, dus die implementatie hebben we nog steeds behouden. Na dit feedbackmoment heeft Victor ervoor gezorgd dat onze uitgelezen waardes van de gyroscoop ook weergegeven konden worden op een scherm.
+Om het concept en werking van de gyroscoop en het coderen ervan onder de knie te krijgen is er eerst een zeer eenvoudige code opgesteld. Hiermee werd ook de werking van de input (gyroscoop) gevalideerd. Met deze code kon bepaald worden of de gyroscoop gekanteld werd en in welke richting er gekanteld werd. Deze data werd vervolgens geprint op de seriële monitor. Hierdoor kreeg de gebruiker te zien of er naar voor, links, rechts, schuin links vooruit, schuin links achteruit, schuin rechts vooruit of schuin rechts achteruit gekanteld werd met de gyroscoop.
+
+#### Balncing game
+
+Na het onder de knie krijgen van de werking van de gyroscoop werd er een spelletje opgesteld. Hierbij was het de bedoeling dat de speler de gyroscoop perfect recht gebalanceerd krijgt. In combinatie met de NEOpixel LEDring werd gekeken naar welke kant de gyroscoop leunde. Aan deze kant lichte een LED van de NEOpixel ring op. Hierdoor kan de speler zien in welke richtng hij afwijkt.
+
+#### Where is waldo? (Protopie)
+
+Na een kort feedbackmoment met de docent werd uitgedaagd om ook een visuele representaie/spel op te stellen zodat er ook iets bestuurd kan worden met de gyroscoop. Aangezien er al een tof project was opgesteld met de balanceerder, zou het zonde zijn om de NEOpixel weg te laten. Daarom werd ook de NEOpixel inbegrepen in dit laatste spel.
+
+Ook hier werd eerst een basisprogramma opgesteld om de combinatie van Arduino en Protopie onder de knie te krijgen en de output te valideren. Hierbij werd een grijze bol bestuurd op het scherm met de beweging van de gyroscoop.
+
+Later werd deze basislogica gebruikt om een 'where is Waldo?' game op te stellen. Hierbij is het doel om Waldo te vinden op het schrm. Met de gyroscoop word een rode cirkel bestuurd. Wanneer deze cirkel over Waldo wordt geplaats en op de knop word gedrukt op de controller, krijgt de speler hapische feedback aan de hand van een trilmotor.
 
 ## Schema
 
