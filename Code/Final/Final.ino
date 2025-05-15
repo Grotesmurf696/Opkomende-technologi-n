@@ -111,14 +111,11 @@ void loop() {
     strip.setPixelColor(Hoekdeel - 1, strip.Color(0,255,0));
     strip.setPixelColor(Hoekdeel + 1, strip.Color(0,255,0));
     strip.show();
-    delay(100);
 
     strip.setPixelColor(Hoekdeel, strip.Color(0,0,0));
     strip.setPixelColor(Hoekdeel - 1, strip.Color(0,0,0));
     strip.setPixelColor(Hoekdeel + 1, strip.Color(0,0,0));
     strip.show();
-    delay(100);
-
   }
 
   //where is waldo?
