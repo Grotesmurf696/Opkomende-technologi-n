@@ -101,10 +101,12 @@ void loop() {
 
   int xHoek = round(atan2(faz, fax) * 180 / PI); //Hoek om de X as berekenen (beweging in de y richting)
   int angle = atan2(ay, ax) * 180 / PI; // hoek voor LEDring
+  if (angle < 0) {
+      angle += 360;
+    }
 
   //Neopixel
   if (angle) {
-    Serial.println(line);  // Debug output
     int hoekGetal = angle;
     int Hoekdeel = hoekGetal / 18;
     
