@@ -100,11 +100,12 @@ void loop() {
   if (zHoek >= 360) zHoek -= 360;
 
   int xHoek = round(atan2(faz, fax) * 180 / PI); //Hoek om de X as berekenen (beweging in de y richting)
+  int angle = atan2(ay, ax) * 180 / PI; // hoek voor LEDring
 
   //Neopixel
-  if (xHoek) {
+  if (angle) {
     Serial.println(line);  // Debug output
-    int hoekGetal = xHoek;
+    int hoekGetal = angle;
     int Hoekdeel = hoekGetal / 18;
     
     strip.setPixelColor(Hoekdeel, strip.Color(255,0,0));
